@@ -101,7 +101,6 @@ html {
 .lightbox__prev{
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -120,7 +119,6 @@ html {
   position: absolute;
   top: 50%;
   right: 0;
-  transform: translateY(-50%);
   display: flex;
   align-items: center;
   justify-content: center;
