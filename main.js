@@ -1,5 +1,6 @@
 const galleryItem = document.querySelectorAll(".gallery__item");
 const lightbox = document.querySelector(".lightbox");
+const lightboxWrapper = document.querySelector(".lightbox__wrapper");
 const lightboxImg = document.querySelector(".lightbox__img");
 const lightboxClose = document.querySelector(".lightbox__close");
 const lightboxNext = document.querySelector(".lightbox__next");
@@ -21,7 +22,8 @@ function showLightBox(lightBox) {
 }
 
 function currentImg() {
-  lightbox.style.display = "flex";
+  lightbox.style.opacity = 1
+  lightbox.style.pointerEvents = "all";
 
   let imageIndex = parseInt(this.getAttribute("data-item"));
   showLightBox(index = imageIndex);
@@ -54,11 +56,13 @@ lightboxNext.addEventListener("click", nextImage);
 
 
 lightbox.addEventListener("click", (event) => {
-  if (event.target === lightbox) {
-    lightbox.style.display = "none";
+  if (event.target === lightboxWrapper) {
+    lightbox.style.opacity = 0
+    lightbox.style.pointerEvents = "none";
   }
   if (event.target === lightboxClose) {
-    lightbox.style.display = "none";
+    lightbox.style.opacity = 0
+    lightbox.style.pointerEvents = "none";
     
   }
 })

@@ -45,14 +45,26 @@ html {
   position: fixed;
   top: 0;
   left: 0;
-  display: none;
+  opacity: 0;
+  pointer-events: none;
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.6);
   width: 100%;
   height: 100%;
   overflow: auto;
+  transition: opacity 0.3s,
+    pointer-events 0.3s;
 }
+
+.lightbox__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
 
 .lightbox__content {
   position: relative;
