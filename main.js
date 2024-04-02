@@ -11,12 +11,6 @@ let index = 1
 
 
 function showLightBox(lightBox) {
-  if (lightbox > galleryItem.length) {
-    index = 1
-  } else if (lightbox < 1) {
-    index = galleryItem.length
-  }
-
   let imgLocation = galleryItem[index - 1].children[0].getAttribute("src");
   lightboxImg.setAttribute("src", imgLocation);
 }
@@ -29,9 +23,7 @@ function currentImg() {
   showLightBox(index = imageIndex);
 }
 
-for (let i = 0; i < galleryItem.length; i++) {
-  galleryItem[i].addEventListener("click", currentImg);
-}
+galleryItem.forEach(item => item.addEventListener("click", currentImg));
 
 function sliderImage(slider) {
   showLightBox(index += slider);
@@ -63,6 +55,6 @@ lightbox.addEventListener("click", (event) => {
   if (event.target === lightboxClose) {
     lightbox.style.opacity = 0
     lightbox.style.pointerEvents = "none";
-    
+
   }
 })
